@@ -1,4 +1,4 @@
-var startBtn=$("#start");
+var startBtn=$(".startGame");
 var timeRemaining=30;
 var countdown;
 var Qindex=0;
@@ -65,20 +65,41 @@ function nxtQ(){
 		displayQ(Qindex);
 	}
 	else{
+		$("#Tsection").empty();
+		$("#done").text("You are done!");
+		$("#correct").text("Correct: "+ correctAns);
+		$("#incorrect").text("Incorrect: " + incorrectAns);
+		$("#unAns").text("Unanswered: "+ unAns);
+		$("#startOver").text("Start Over!");
+		startOvervars();	
 		
 	}
-
-
 }
+function startOvervars(){
+	Qindex=0;
+	correctAns=0;
+	incorrectAns=0;
+	unAns=0;
+}
+function startOverclear(){
+	$("#done").empty();
+	$("#correct").empty();
+	$("#incorrect").empty();
+	$("#unAns").empty();
+	$("#startOver").empty();
+}
+
 //--------------------------------------------
 
-startBtn.click(function(){
-	startBtn.hide();
+startBtn.on("click",function(){
+	$("#start").hide();
 	timer();
 	displayQ(Qindex);
+	startOverclear();
 	
 	
 	$("#choices").on("click","div",function(){
+		startOverclear();
 
 		var choiceClicked=$(this).attr("id");
 		clearTimeout(countdown);
@@ -89,6 +110,7 @@ startBtn.click(function(){
 			
 			$("#result").text("CORRECT!");
 			imgDisplay();
+			correctAns++;
 			//always after imgdisplay(), Qindex need to not be incremented before its passed
 			setTimeout(function() {
 			nxtQ();	},1000*3);
@@ -106,5 +128,4 @@ startBtn.click(function(){
 	
 		
 	});
-	
 });
