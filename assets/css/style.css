@@ -1,0 +1,74 @@
+body{
+	background-image: url("../images/background.jpg");
+}
+img{
+	width:300px;
+	height:150px;
+}
+#container{
+	margin:5% auto;
+	width:60%;
+	height:350px;
+	background-color:#ec856d;
+	font-family: 'Patrick Hand', cursive;
+	border:5px dotted yellow;
+	text-align: center;
+	font-size: 25px;
+}
+#title{
+	color: #fbe886;
+	font-family: 'Pacifico', cursive;
+	margin:25px auto;
+	font-size: 50px;
+}
+
+button{
+	margin-top: 50px;
+	width:200px;
+	height:60px;
+	color:#ffffff;
+	background-color: #97f871;
+	font-size: 40px;
+	border:2px dotted #f5ca7e;
+}
+
+#Tsection{
+	color: #ffffff;
+	font-family: 'Black Ops One', cursive;
+}
+
+#Qsection{
+	margin: 10px auto;
+	color:#ffffff;
+}
+.ans{
+	margin-top:5px;
+	color:#fbe886;
+}
+.ans:hover{
+	background-color:#00aaa6;
+}
+#result{
+	font-size: 30px;
+	color:#fbe886;
+}
+#correctAns{
+	margin-top: 5px;
+	color:#ffffff;
+}
+#done{
+	font-size: 40px;
+	color:#ffffff;
+}
+#correct,#incorrect,#unAns{
+	color: #fbe886;
+
+}
+
+#startOver{
+	font-size: 50px;
+	color:#97f871;
+}
+#startOver:hover{
+	color:#6c8d6a;
+}

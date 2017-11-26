@@ -1,16 +1,29 @@
+//Qs from http://www.fruitexpert.co.uk/fun-fruit-quiz.html
+
 var startBtn=$(".startGame");
 var timeRemaining=30;
 var countdown;
 var Qindex=0;
-var anskey=["choice0","choice1"];
+
 var Qs = [{
-		Question:"Who invented the telephone?",
-		Choices:["Pablo","Bell","mario"]},
+		Question:"Papain is a natural digestive aid that is found naturally in:",
+		Choices:["Mango","Papaya","Raspberry"]},
 		{
-		Question:"Which nail grows fastest?",
-		Choices:["pinky","index","middle",]}];
-var anskeyDisplayed=[Qs[0].Choices[0]];
-var images=["assets/images/colorful.png","assets/images/diamond.png"];
+		Question:"Because it has a high quercitin content this fruit may help relieve hayfever.",
+		Choices:["Pineapple","Strawberry","Raspberry"]},
+		{
+		Question:"There is a fruit juice that can increase the potency of some medication, even causing an overdose. Which fruit juice is this?",
+		Choices:["Grapefruit","Orange","Banana"]},
+		{
+		Question:"In the Hindu culture, the leaves of which fruit are hung at weddings to ensure fertility?",
+		Choices:["Mango","Banana","Papaya"]},
+		{
+		Question:"Apple seeds contain:",
+		Choices:["Vitamin H","Sodium","Cyanide"]},];
+
+var anskey=["choice1","choice2","choice0","choice0","choice2"];
+var anskeyDisplayed=[Qs[0].Choices[1],Qs[1].Choices[2],Qs[2].Choices[0],Qs[3].Choices[0],Qs[4].Choices[2]];
+var images=["assets/images/papaya.gif","assets/images/raspberry.gif","assets/images/grapefruit.gif","assets/images/mango.gif","assets/images/apple.gif"];
 var correctAns=0;
 var incorrectAns=0;
 var unAns=0;
