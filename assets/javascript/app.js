@@ -1,7 +1,7 @@
 //Qs from http://www.fruitexpert.co.uk/fun-fruit-quiz.html
 
 var startBtn=$(".startGame");
-var timeRemaining=30;
+var timeRemaining=15;
 var countdown;
 var Qindex=0;
 
@@ -73,7 +73,7 @@ function nxtQ(){
 	$("#img-holder").empty();
 
 	if(Qindex<=(Qs.length-1)){
-		timeRemaining=30;
+		timeRemaining=15;
 		timer();
 		displayQ(Qindex);
 	}
