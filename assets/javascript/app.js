@@ -27,6 +27,7 @@ var images=["assets/images/papaya.gif","assets/images/raspberry.gif","assets/ima
 var correctAns=0;
 var incorrectAns=0;
 var unAns=0;
+var backgroundSong=new Audio("assets/images/vivora.mp3");
 //----------------------------------------
 
 function timer(){
@@ -105,6 +106,8 @@ function startOverclear(){
 //--------------------------------------------
 
 startBtn.on("click",function(){
+	backgroundSong.play();
+	backgroundSong.volume=0.2;
 	$("#start").hide();
 	timer();
 	displayQ(Qindex);
@@ -121,6 +124,7 @@ startBtn.on("click",function(){
 
 		if(choiceClicked===anskey[Qindex]){
 			
+			
 			$("#result").text("CORRECT!");
 			imgDisplay();
 			correctAns++;
@@ -130,6 +134,7 @@ startBtn.on("click",function(){
 		}
 
 		else{
+
 
 			$("#result").text("WRONG!");
 			imgDisplay();
