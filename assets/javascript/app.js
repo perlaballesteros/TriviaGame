@@ -90,6 +90,7 @@ function nxtQ(){
 	}
 }
 function startOvervars(){
+	timeRemaining=15;
 	Qindex=0;
 	correctAns=0;
 	incorrectAns=0;
@@ -109,6 +110,7 @@ startBtn.on("click",function(){
 	backgroundSong.play();
 	backgroundSong.volume=0.2;
 	$("#start").hide();
+	timeRemaining=15;
 	timer();
 	displayQ(Qindex);
 	startOverclear();
