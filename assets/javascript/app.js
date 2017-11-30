@@ -62,6 +62,7 @@ function emptyQA(){
 	for(var i=0;i<3;i++){
 		$("#choice"+i).empty();
 	}
+
 }
 //displaying the correct answer and img
 function imgDisplay(){
@@ -77,6 +78,7 @@ function nxtQ(){
 	$("#img-holder").empty();
 
 //keep displaying question as long as in array 
+
 	if(Qindex<=(Qs.length-1)){
 		timeRemaining=15;
 		timer();
@@ -90,6 +92,7 @@ function nxtQ(){
 		$("#unAns").text("Unanswered: "+ unAns);
 		$("#startOver").text("Start Over!");
 		startOvervars();
+		
 			
 	}
 }
@@ -111,33 +114,37 @@ function startOverclear(){
 
 //-----------------------------------------
 startBtn.on("click",function(){
+	console.log("timeRemainingb4 "+timeRemaining);
+	console.log("Qindexb4 "+ Qindex);
+	
+	
 	//initialize the variables for everytime we start over
 	startOverclear();
 	//hide start button
 	$("#start").hide();
-	////Display Qs
-	displayQ(Qindex);
+
 	//start the timer
 	timer();
-	
+	////Display Qs
+	displayQ(Qindex);
 	
 	$("#choices").on("click","div",function(){
-		clearTimeout(countdown);
+		
+	console.log("Qindex "+ Qindex);
 
 		var choiceClicked=$(this).attr("id");
 		emptyQA();
-			
+		clearTimeout(countdown);
 
 		if(choiceClicked===anskey[Qindex]){
 			
-			
-			console.log("im here");
 			$("#result").text("CORRECT!");
 			imgDisplay();
 			correctAns++;
 			//always after imgdisplay(), Qindex need to not be incremented before its passed
 			setTimeout(function() {
 			nxtQ();	},1000*3);
+			
 		}
 
 		else{
@@ -149,6 +156,7 @@ startBtn.on("click",function(){
 			//always after imgdisplay(), Qindex need to not be incremented before its passed
 			setTimeout(function() {
 			nxtQ();	},1000*3);	
+			
 		}
 	
 		
